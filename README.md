@@ -1,16 +1,10 @@
 # Laboratorio 13: Compresion y Descompresion con Algoritmo de Huffman
 
-Este repositorio contiene la implementacion completa, modular y determinista del **Algoritmo de Huffman** para la compresion y descompresion sin perdida de archivos de texto y binarios en lenguaje **C11**, correspondiente a la materia de *Algoritmos y Estructura de Datos*.
+Este repositorio contiene la implementacion completa, modular y determinista del **Algoritmo de Huffman** para la compresion y descompresion sin perdida de archivos de texto y binarios en lenguaje **C11**, correspondiente al lab 13
 
----
 
-## 📋 Requisitos de Ejecucion
-- **Compilador**: GCC (compatible con C11).
-- **Herramienta de Construccion**: Make (`mingw32-make` en Windows o `make` en Unix).
 
----
-
-## 📁 Estructura del Proyecto
+Estructura del Proyecto
 El codigo se encuentra estructurado de forma modular de la siguiente manera:
 ```text
 ├── resultados/           # Archivos generados durante las pruebas (.huff, .txt, .bin)
@@ -27,7 +21,7 @@ El codigo se encuentra estructurado de forma modular de la siguiente manera:
 
 ---
 
-## 🛠️ Instrucciones del Makefile
+ Instrucciones del Makefile
 El `makefile` esta configurado para dar soporte nativo y multiplataforma tanto en **Windows** (PowerShell / CMD) como en **Linux/macOS**.
 
 ### 1. Compilar todo el proyecto
@@ -61,29 +55,16 @@ make clean
 
 ---
 
-## 💻 Sintaxis de la Interfaz por Linea de Comandos (CLI)
+Sintaxis de la Interfaz por Linea de Comandos (CLI)
 Una vez compilado, puedes interactuar directamente con el ejecutable `huffman` utilizando la siguiente sintaxis:
 
 *   **Compresion**:
     ```bash
-    .\huffman -c <archivo_entrada> <archivo_salida.huff>
+    .\huffman -c archivo.txt archivo.huff
     ```
 *   **Descompresion**:
     ```bash
-    .\huffman -d <archivo_comprimido.huff> <archivo_destino>
+    .\huffman -d archivo.huff archivo_recuperado.txt 
     ```
 
-*Ejemplo:*
-```bash
-.\huffman -c archivo.txt resultados/archivo.huff
-.\huffman -d resultados/archivo.huff resultados/archivo_recuperado.txt
-```
 
----
-
-## 📊 Metricas Estadisticas del Algoritmo
-El modulo de compresion calcula y muestra dinamicamente en pantalla las metricas de rendimiento requeridas por la guia (Seccion 1.1):
-*   **Entropia de la Fuente ($H$)**: Límite teórico de compresion en bits por caracter.
-*   **Longitud Media del Codigo ($\bar{L}$)**: Promedio de bits utilizados por caracter en el diccionario generado.
-*   **Tasa de Compresion ($CR$)**: Relacion del tamaño original vs tamaño comprimido.
-*   **Porcentaje de Ahorro ($SP$)**: Reduccion de espacio lograda expresada en porcentaje.
